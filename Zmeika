@@ -89,7 +89,6 @@ class Snake(GameObject):
             self.positions.pop()
 
     def draw(self, surface):
-        """Отрисовывает змейку на экране."""
         for position in self.positions:
             rect = pygame.Rect(
                 position[0],
@@ -101,18 +100,15 @@ class Snake(GameObject):
             pygame.draw.rect(surface, BLACK, rect, 1)
 
     def get_head_position(self):
-        """Возвращает позицию головы змейки."""
         return self.positions[0]
 
     def reset(self):
-        """Сбрасывает змейку в начальное состояние."""
         self.length = 1
         self.positions = [self.position]
         self.direction = RIGHT
         self.next_direction = None
 
     def grow(self):
-        """Увеличивает длину змейки."""
         self.length += 1
 
 def handle_keys(snake):
